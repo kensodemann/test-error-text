@@ -1,0 +1,7 @@
+{
+  "name": "test-error-text",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
