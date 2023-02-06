@@ -14,13 +14,20 @@
           <ion-note slot="helper">{{ helperText }}</ion-note>
           <ion-note slot="error">{{ errorText }}</ion-note>
         </ion-item>
-        <ion-item>
+        <ion-item lines="none">
           <ion-input
             ref="newInput"
             label="The New Hotness"
             label-placement="floating"
             :errorText="errorText"
             :helperText="helperText"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input
+            type="password"
+            label="Password"
+            label-placement="floating"
           ></ion-input>
         </ion-item>
         <ion-item>
