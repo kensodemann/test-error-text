@@ -36,6 +36,16 @@
           <ion-button color="secondary" @click="reset">Reset</ion-button>
         </ion-item>
       </ion-list>
+      <div class="ion-padding">
+        <ion-input
+          ref="nakedInput"
+          label="I am Naked"
+          label-placement="floating"
+          fill="solid"
+          :errorText="errorText"
+          :helperText="helperText"
+        ></ion-input>
+      </div>
     </ion-content>
   </ion-page>
 </template>
@@ -60,6 +70,7 @@ const helperText = ref();
 const errorText = ref();
 const oldInput = ref(null);
 const newInput = ref(null);
+const nakedInput = ref(null);
 
 const showError = () => {
   errorText.value = "you went and hosed that up";
@@ -67,6 +78,8 @@ const showError = () => {
   (oldInput.value as any).$el.classList.add("ion-invalid");
   (newInput.value as any).$el.classList.remove("ion-valid");
   (newInput.value as any).$el.classList.add("ion-invalid");
+  (nakedInput.value as any).$el.classList.remove("ion-valid");
+  (nakedInput.value as any).$el.classList.add("ion-invalid");
 };
 
 const showHelper = () => (helperText.value = "you should really do something");
@@ -78,5 +91,7 @@ const reset = () => {
   (oldInput.value as any).$el.classList.remove("ion-invalid");
   (newInput.value as any).$el.classList.add("ion-valid");
   (newInput.value as any).$el.classList.remove("ion-invalid");
+  (nakedInput.value as any).$el.classList.add("ion-valid");
+  (nakedInput.value as any).$el.classList.remove("ion-invalid");
 };
 </script>
